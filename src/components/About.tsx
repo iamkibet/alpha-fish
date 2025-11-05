@@ -4,18 +4,18 @@ export default function About() {
       <div className="mx-auto max-w-7xl px-4 ">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Image */}
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+          <div className="relative order-2 md:order-1 rounded-3xl overflow-hidden shadow-2xl">
             <img
               src="/images/5.jpg"
               alt="Alpha Fish Processing Facility"
               className="w-full h-[500px] object-cover"
             />
-         \
+            \
             <div className="absolute inset-0 bg-linear-to-tr from-black/20 via-transparent to-transparent"></div>
           </div>
 
           {/* Right Side - Content */}
-          <div className="space-y-6">
+          <div className="order-1 md:order-2 space-y-6">
             <h2 className="section-heading pb-2">About Us</h2>
             <div className="space-y-4 text-slate-700">
               <p className="text-lg leading-relaxed">
