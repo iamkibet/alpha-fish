@@ -26,68 +26,149 @@ export default function AlphaFishLanding() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-sky-50 text-slate-800">
+    <div className="min-h-screen bg-linear-to-b from-slate-50 via-white to-sky-50 text-slate-800">
       <Navbar />
       <Hero />
       <About />
       <Services />
       <Catalogue /> {/* Quality & Certifications */}
-      <section id="quality" className="py-16 lg:py-24 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-10 items-start">
+      <section
+        id="quality"
+        className="relative overflow-hidden py-14"
+        aria-labelledby="quality-title"
+      >
+        {/* decorative background */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10"
+        >
+          <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full blur-3xl bg-linear-to-br from-sky-400/30 to-blue-600/20" />
+          <div className="absolute -bottom-24 -left-24 h-72 w-72 rounded-full blur-3xl bg-linear-to-tr from-cyan-300/20 to-sky-500/10" />
+          <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_50%_-10%,rgba(56,189,248,0.10),rgba(255,255,255,0))]" />
+        </div>
+
+        <div className="mx-auto max-w-7xl px-4 ">
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-start">
+            {/* Left: Copy */}
             <div>
-              <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-                Quality & Food Safety
+              <h2 id="quality-title" className="section-heading">
+                Quality &amp; Food Safety
               </h2>
-              <p className="mt-3 text-lg text-slate-700 leading-relaxed">
-                Our quality system is built around HACCP principles, supplier
-                audits, and continuous temperature monitoring. We maintain full
-                batch traceability from catch to customer, supported by digital
-                logs and routine laboratory testing.
+
+              <p className="mt-4 text-lg leading-relaxed text-slate-700">
+                Our system is engineered around HACCP principles, supplier
+                audits, and continuous cold-chain monitoring. From catch to
+                customer, we maintain full batch traceability with digital logs
+                and routine laboratory testing—so every shipment is verified,
+                documented, and release-gated.
               </p>
-              <ul className="mt-6 space-y-3 text-slate-700">
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-sky-600 flex-shrink-0" />
-                  <span>
-                    Hazard analysis with CCP verification and corrective action
-                    workflows
-                  </span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-sky-600 flex-shrink-0" />
-                  <span>
-                    Microbio & organoleptic checks, metal detection, allergen
-                    controls
-                  </span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-sky-600 flex-shrink-0" />
-                  <span>
-                    Digital temperature logs with automated alerts and shipment
-                    release gates
-                  </span>
-                </li>
+
+              <ul className="mt-6 space-y-4">
+                {[
+                  "Hazard analysis with CCP verification and corrective-action workflows",
+                  "Microbiological & organoleptic checks, metal detection, allergen controls",
+                  "Digital temperature logs with automated alerts and shipment release gates",
+                ].map((item, i) => (
+                  <li key={i} className="group flex gap-3">
+                    <span className="mt-1 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-sky-600/10 ring-1 ring-sky-200 transition group-hover:bg-sky-600/15">
+                      {/* check icon */}
+                      <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        className="h-3.5 w-3.5 text-sky-700"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                    </span>
+                    <span className="text-slate-800">{item}</span>
+                  </li>
+                ))}
               </ul>
             </div>
-            <div className="rounded-3xl ring-1 ring-slate-200 bg-slate-50 p-6">
-              <div className="grid sm:grid-cols-2 gap-4">
-                {qualityFeatures.map(([k, v], i) => (
-                  <div
-                    key={i}
-                    className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-slate-200"
-                  >
-                    <p className="text-xs text-slate-500 uppercase tracking-wide">
-                      {k}
-                    </p>
-                    <p className="text-sm font-semibold text-slate-900 mt-1">
-                      {v}
-                    </p>
+
+            {/* Right: Cards */}
+            <div className="relative">
+              <div className="absolute -inset-2 -z-10 rounded-3xl bg-linear-to-tr from-sky-100 to-white blur-sm" />
+              <div className="rounded-3xl border border-slate-200 bg-white/80 p-6 shadow-lg backdrop-blur">
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {(
+                    qualityFeatures ?? [
+                      ["Cold-chain variance", "< 0.5°C over route avg"],
+                      ["Batch traceability", "100% lots linked to COA"],
+                      ["Swab pass rate", "≥ 98% weekly average"],
+                      ["Release compliance", "4-eye sign-off on CCP"],
+                    ]
+                  ).map(([k, v]: any, i: number) => (
+                    <div
+                      key={i}
+                      className="group relative rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                    >
+                      <div className="flex items-start justify-between gap-2">
+                        <p className="text-[11px] font-medium uppercase tracking-wide text-slate-500">
+                          {k}
+                        </p>
+                        {/* spark icon */}
+                        <svg
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                          className="h-4 w-4 text-sky-600/70 transition group-hover:text-sky-700"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="1.8"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                        </svg>
+                      </div>
+                      <p className="mt-1 text-base font-semibold text-slate-900">
+                        {v}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                  <div className="flex items-start gap-3">
+                    <span className="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-sky-600/10 ring-1 ring-sky-200">
+                      {/* shield icon */}
+                      <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        className="h-3.5 w-3.5 text-sky-700"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        <path d="m9 12 2 2 4-4" />
+                      </svg>
+                    </span>
+                    <div>
+                      <p className="text-sm font-semibold text-slate-900">
+                        Private audits &amp; market access
+                      </p>
+                      <p className="mt-1 text-sm text-slate-700">
+                        Need specific certificates? We arrange customer-specific
+                        audits and provide documentation packs for priority
+                        markets.
+                      </p>
+                    </div>
                   </div>
-                ))}
-              </div>
-              <div className="mt-6 rounded-xl bg-white p-4 text-sm ring-1 ring-slate-200">
-                Need specific certificates? Ask about private audits for key
-                customers and markets.
+                </div>
+
+                {/* subtle footnote */}
+                <p className="mt-3 text-xs text-slate-500">
+                  * Metrics available per lot and shipment; full COA &amp; trace
+                  docs on request.
+                </p>
               </div>
             </div>
           </div>
@@ -156,7 +237,7 @@ export default function AlphaFishLanding() {
       {/* CTA */}
       <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl bg-gradient-to-r from-sky-600 to-sky-700 px-6 py-10 sm:px-10 sm:py-14 text-white shadow-xl">
+          <div className="rounded-3xl bg-linear-to-r from-sky-600 to-sky-700 px-6 py-10 sm:px-10 sm:py-14 text-white shadow-xl">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-2xl font-bold sm:text-3xl">

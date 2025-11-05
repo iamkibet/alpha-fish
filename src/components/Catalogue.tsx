@@ -462,7 +462,7 @@ export default function Catalogue() {
   }, [go]);
 
   return (
-    <section id="catalogue" className="py-14 sm:py-16 lg:py-24">
+    <section id="catalogue" className="py-14 ">
       <div className="mx-auto max-w-7xl px-4">
         <header className="mb-8">
           <h2 className="section-heading">Product Catalogue</h2>
