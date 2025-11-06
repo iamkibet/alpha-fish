@@ -193,39 +193,39 @@ export default function Navbar() {
             </div>
 
             <nav className="h-full flex flex-col">
-              <div className="px-3 py-4 space-y-2 overflow-y-auto grow">
+              <div className="px-3 py-4">
                 <a
                   href="#services"
                   onClick={closeMenu}
-                  className="block rounded-lg px-4 py-3 text-slate-800 bg-slate-50 hover:bg-slate-100 transition"
+                  className="block px-4 py-3 text-slate-800 bg-slate-50 hover:bg-slate-100 transition"
                 >
                   Services
                 </a>
                 <a
                   href="#quality"
                   onClick={closeMenu}
-                  className="block rounded-lg px-4 py-3 text-slate-800 bg-slate-50 hover:bg-slate-100 transition"
+                  className="block px-4 py-3 text-slate-800 bg-slate-50 hover:bg-slate-100 transition"
                 >
                   Quality
                 </a>
                 <a
                   href="#infrastructure"
                   onClick={closeMenu}
-                  className="block rounded-lg px-4 py-3 text-slate-800 bg-slate-50 hover:bg-slate-100 transition"
+                  className="block  px-4 py-3 text-slate-800 bg-slate-50 hover:bg-slate-100 transition"
                 >
                   Infrastructure
                 </a>
                 <a
                   href="#clients"
                   onClick={closeMenu}
-                  className="block rounded-lg px-4 py-3 text-slate-800 bg-slate-50 hover:bg-slate-100 transition"
+                  className="block  px-4 py-3 text-slate-800 bg-slate-50 hover:bg-slate-100 transition"
                 >
                   Clients
                 </a>
                 <a
                   href="#contact"
                   onClick={closeMenu}
-                  className="block rounded-lg px-4 py-3 text-slate-800 bg-slate-50 hover:bg-slate-100 transition"
+                  className="block px-4 py-3 text-slate-800 bg-slate-50 hover:bg-slate-100 transition"
                 >
                   Contact
                 </a>
