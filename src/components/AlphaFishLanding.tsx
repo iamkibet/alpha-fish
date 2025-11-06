@@ -129,7 +129,7 @@ export default function AlphaFishLanding() {
                 {/* Highlight Card */}
                 <div className="bg-slate-50/80 rounded-xl p-5 border border-slate-200/40">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-sky-500/10 flex items-center justify-center">
+                    <div className="shrink-0 w-8 h-8 rounded-full bg-sky-500/10 flex items-center justify-center">
                       <svg
                         className="w-4 h-4 text-sky-600"
                         fill="none"
@@ -197,7 +197,7 @@ export default function AlphaFishLanding() {
       {/* CTA */}
       <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl bg-gradient-to-r from-sky-600 to-sky-700 px-6 py-12 sm:px-10 sm:py-14 lg:px-12 text-white shadow-xl">
+          <div className="rounded-3xl bg-linear-to-r from-sky-600 to-sky-700 px-6 py-12 sm:px-10 sm:py-14 lg:px-12 text-white shadow-xl">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Text Content */}
               <div className="text-center lg:text-left space-y-4">
